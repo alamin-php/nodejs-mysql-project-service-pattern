@@ -7,7 +7,8 @@ class UserService {
     return new Promise((resolve, reject) => {
       db.query("SELECT id,name,email FROM users", (err, results) => {
         if (err) return reject(err);
-        resolve({ results });
+        // resolve({ results });
+        resolve(JSON.parse(JSON.stringify(results)));
       });
     });
   }
